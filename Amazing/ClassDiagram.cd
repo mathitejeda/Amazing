@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="persona">
+    <Position X="1.75" Y="0.5" Width="1.5" />
+    <Members>
+      <Method Name="~persona" Hidden="true" />
+      <Method Name="persona" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AABAAAABAAQAAACAAAAAwAAIAAEAABQAAAAAAAAEAAA=</HashCode>
+      <FileName>persona.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="cliente">
+    <Position X="0.5" Y="4.25" Width="1.5" />
+    <Members>
+      <Method Name="~cliente" Hidden="true" />
+      <Method Name="cliente" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAwAAAAAAAAAAAAgAAAAAEAAAAAAgAAAAI=</HashCode>
+      <FileName>cliente.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="conductor">
+    <Position X="2.75" Y="4.25" Width="1.5" />
+    <Members>
+      <Method Name="~conductor" Hidden="true" />
+      <Method Name="conductor" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAABAAAAAAAAAAAAAAAQAAAAAAAAAAABAAAQ=</HashCode>
+      <FileName>conductor.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="transporte">
+    <Position X="7" Y="0.5" Width="1.5" />
+    <Members>
+      <Method Name="~transporte" Hidden="true" />
+      <Method Name="transporte" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAACYAAAAAAIggCAAAAAAgAAAAAAAQBACAAABEIACAI=</HashCode>
+      <FileName>transporte.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="envio">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <Members>
+      <Method Name="~envio" Hidden="true" />
+      <Method Name="envio" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>QAAAEQEQACAAABMAAAAAAAgAAAAAEAAAEABBAEAAEAA=</HashCode>
+      <FileName>envio.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
