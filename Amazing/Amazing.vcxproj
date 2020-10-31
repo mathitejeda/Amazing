@@ -143,6 +143,7 @@
     <ClInclude Include="conductor.h" />
     <ClInclude Include="envio.h" />
     <ClInclude Include="fecha.h" />
+    <ClInclude Include="paquete.h" />
     <ClInclude Include="persona.h" />
     <ClInclude Include="transporte.h" />
   </ItemGroup>
@@ -151,6 +152,7 @@
     <ClCompile Include="conductor.cpp" />
     <ClCompile Include="envio.cpp" />
     <ClCompile Include="fecha.cpp" />
+    <ClCompile Include="paquete.cpp" />
     <ClCompile Include="persona.cpp" />
     <ClCompile Include="transporte.cpp" />
   </ItemGroup>
