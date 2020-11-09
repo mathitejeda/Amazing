@@ -2,7 +2,6 @@
 #include <ctime>
 #include <string>
 #include "fecha.h"
-#include "Funciones.h"
 
 using namespace std;
 
@@ -59,7 +58,7 @@ const char* fecha::mostrarDiaTexto(int dia)
         break;
     default:
         sDia = "";
-        error("El numero no corresponde a ningun dia.");
+        cout << "El numero no corresponde a ningun dia.";
         return sDia;
         break;
     }
