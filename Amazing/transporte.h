@@ -1,5 +1,6 @@
 #pragma once
 #include "fecha.h"
+
 class transporte
 {
 public:
@@ -7,8 +8,8 @@ public:
 	~transporte();
 
 	void setID(int ID);
-	void setTipo(int tipo);
-	
+	void setTipoVehiculo(int tipo);
+	void setPatente(char patente[7]);	
 
 	int getID() { return ID; }
 	int getTipo() { return tipoVehiculo; }
@@ -16,6 +17,8 @@ public:
 	void getVencimiento() { return vencimientoVTV.mostrarFecha(); }
 	bool getSeguro() { return seguro; }
 	bool getCirculacion() { return circulacion; }
+
+	
 
 private:
 	int tipoVehiculo, ID;
@@ -38,3 +41,5 @@ transporte::transporte()
 transporte::~transporte()
 {
 }
+
+
