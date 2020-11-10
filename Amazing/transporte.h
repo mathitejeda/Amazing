@@ -9,7 +9,7 @@ public:
 
 	void setID(int ID);
 	void setTipoVehiculo(int tipo);
-	void setPatente(char patente[7]);	
+	void setPatente(char patente[7]);
 
 	int getID() { return ID; }
 	int getTipo() { return tipoVehiculo; }

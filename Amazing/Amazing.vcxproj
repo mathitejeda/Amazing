@@ -141,8 +141,12 @@
   <ItemGroup>
     <ClInclude Include="cliente.h" />
     <ClInclude Include="conductor.h" />
+    <ClInclude Include="datoConductor.h" />
+    <ClInclude Include="datosTransporte.h" />
     <ClInclude Include="envio.h" />
     <ClInclude Include="fecha.h" />
+    <ClInclude Include="negocioConductor.h" />
+    <ClInclude Include="negocioTransporte.h" />
     <ClInclude Include="paquete.h" />
     <ClInclude Include="persona.h" />
     <ClInclude Include="transporte.h" />
@@ -150,8 +154,12 @@
   <ItemGroup>
     <ClCompile Include="cliente.cpp" />
     <ClCompile Include="conductor.cpp" />
+    <ClCompile Include="datoConductor.cpp" />
+    <ClCompile Include="datosTransporte.cpp" />
     <ClCompile Include="envio.cpp" />
     <ClCompile Include="fecha.cpp" />
+    <ClCompile Include="negocioConductor.cpp" />
+    <ClCompile Include="negocioTransporte.cpp" />
     <ClCompile Include="paquete.cpp" />
     <ClCompile Include="persona.cpp" />
     <ClCompile Include="transporte.cpp" />
