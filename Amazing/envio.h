@@ -7,16 +7,12 @@ public:
 	envio();
 	~envio();
 
-	void setEstadoEntrega(bool estado);
 	void setEstadoEnvio(int envio);
-
-	bool getEstadoEntrega() { return estadoEntrega; }
 	int getEstadoEnvio() { return estadoEnvio; }
 	void getFecha() { return fechaEnvio.mostrarFecha(); }
 
 private:
-	char dniRemitente[12], dniDestinatario[12];
-	bool estadoEntrega;
+	int idpaquete;
 	int estadoEnvio, intentos;
 	int IDVehiculo, legajoChofer;
 	fecha fechaEnvio;

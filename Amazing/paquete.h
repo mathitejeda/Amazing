@@ -7,14 +7,8 @@ public:
 	~paquete();
 
 private:
-
+	int id;
+	bool estadoEntrega;
 };
 
-paquete::paquete()
-{
-}
-
-paquete::~paquete()
-{
-}
 

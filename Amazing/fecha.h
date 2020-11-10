@@ -16,6 +16,7 @@ public:
 	void mostrarFecha();
 	void mostrarFechaTexto();
 	const char* mostrarDiaTexto(int dia);
+	bool verificarFecha(int dia, int mes, int anio);
 
 private:
 	int dia;
