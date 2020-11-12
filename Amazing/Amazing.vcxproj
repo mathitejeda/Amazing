@@ -142,6 +142,7 @@
     <ClInclude Include="cliente.h" />
     <ClInclude Include="conductor.h" />
     <ClInclude Include="datoConductor.h" />
+    <ClInclude Include="datosPaquete.h" />
     <ClInclude Include="datosTransporte.h" />
     <ClInclude Include="envio.h" />
     <ClInclude Include="fecha.h" />
@@ -155,6 +156,7 @@
     <ClCompile Include="cliente.cpp" />
     <ClCompile Include="conductor.cpp" />
     <ClCompile Include="datoConductor.cpp" />
+    <ClCompile Include="datosPaquete.cpp" />
     <ClCompile Include="datosTransporte.cpp" />
     <ClCompile Include="envio.cpp" />
     <ClCompile Include="fecha.cpp" />

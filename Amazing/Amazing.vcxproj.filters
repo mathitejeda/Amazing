@@ -48,6 +48,9 @@
     <ClInclude Include="negocioTransporte.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="datosPaquete.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="persona.cpp">
@@ -81,6 +84,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="negocioTransporte.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="datosPaquete.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
