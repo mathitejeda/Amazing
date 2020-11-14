@@ -3,9 +3,6 @@
 class persona
 {
 public:
-	persona();
-	~persona();
-
 	void setNombre(char nombre[50]);
 	void setApellido(char apellido[50]);
 	void setDNI(char DNI[12]);
@@ -18,10 +15,3 @@ private:
 	char nombre[50], apellido[50], DNI[12];
 };
 
-persona::persona()
-{
-}
-
-persona::~persona()
-{
-}

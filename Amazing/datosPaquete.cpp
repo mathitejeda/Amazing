@@ -11,13 +11,13 @@ bool datosPaquete::guardarPaquete(paquete reg)
 	return exito;
 }
 
-bool datosPaquete::leerPaquete(int pos)
+bool datosPaquete::leerPaquete(int pos,paquete &leer)
 {
 	if (pos >= 0) {
 		p = fopen(PATH_PAQUETE, "rb");
 		if (p == NULL) return false;
 		fseek(p, pos * tamanio, SEEK_SET);
-		exito = fread(&reg, tamanio, 1, p);
+		exito = fread(&leer, tamanio, 1, p);
 		fclose(p);
 		return exito;
 	}

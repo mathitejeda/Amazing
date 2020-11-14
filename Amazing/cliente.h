@@ -4,9 +4,6 @@
 class cliente:public persona
 {
 public:
-	cliente();
-	~cliente();
-
 	void setTelefono(int telefono);
 	void setDomicilio(char domicilio[50]);
 
@@ -18,11 +15,4 @@ private:
 	char domicilio[50];
 };
 
-cliente::cliente()
-{
-}
-
-cliente::~cliente()
-{
-}
 

@@ -7,11 +7,3 @@ public:
     bool nuevoConductor(conductor reg);
     bool modificarConductor(conductor mod, int pos);
 };
-
-negocioConductor::negocioConductor(/* args */)
-{
-}
-
-negocioConductor::~negocioConductor()
-{
-}

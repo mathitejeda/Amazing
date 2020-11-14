@@ -1,21 +1,27 @@
-#include "transporte.h"
 #include <iostream>
+#include <string.h>
+#include "transporte.h"
+
 
 using namespace std;
 
-inline void transporte::setID(int ID)
+void transporte::setID(int ID)
 {
 	this->ID = ID;
 }
 
-inline void transporte::setTipoVehiculo(int tipo)
+void transporte::setTipoVehiculo(int tipo)
 {
 	this->tipoVehiculo = tipo;
 }
 
-inline void transporte::setPatente(char patente[7])
+void transporte::setPatente(const char* patente)
 {
 	strcpy(this->patente, patente);
+}
+
+void transporte::setModeloVehiculo(const char* modelo) {
+	strcpy(this->modelo, modelo);
 }
 
 

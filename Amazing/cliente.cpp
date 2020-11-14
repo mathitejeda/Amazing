@@ -1,5 +1,6 @@
-#include "cliente.h"
 #include <iostream>
+#include <string.h>
+#include "cliente.h"
 void cliente::setTelefono(int telefono) {
 	this->telefono = telefono;
 }

@@ -1,9 +1,12 @@
 #pragma once
 #include "transporte.h"
+
 class negocioTransporte
 {
 public:
-	bool nuevoTransporte(transporte);
-	bool modificarTransporte(transporte,int);
+	bool nuevoTransporte(transporte reg);
+	bool modificarTransporte(transporte mod,int);
+	bool leerTransporte(int pos, transporte& leer);
+
 };
 

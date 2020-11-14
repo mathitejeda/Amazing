@@ -4,7 +4,7 @@ class datoConductor
 {
 private:
     conductor reg;
-    FILE *p;
+    FILE * p;
     const char* PATH_CONDUCTOR = "../datos/conductor.dat";
     bool exito = false;
 public:
@@ -12,14 +12,4 @@ public:
     bool guardarConductor(conductor reg);
     bool leerConductor(int pos);
     bool modificarConductor(conductor mod, int pos);
-    datoConductor(/* args */);
-    ~datoConductor();
 };
-
-datoConductor::datoConductor(/* args */)
-{
-}
-
-datoConductor::~datoConductor()
-{
-}

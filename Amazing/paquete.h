@@ -3,12 +3,12 @@
 class paquete
 {
 public:
-	paquete();
-	~paquete();
-
+	
 private:
 	int id;
 	bool estadoEntrega;
+	float peso;
+	int idEnvio;
 };
 
 

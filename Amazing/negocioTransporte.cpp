@@ -14,3 +14,8 @@ bool negocioTransporte::modificarTransporte(transporte mod, int pos)
     datosTransporte dt;
     return dt.modificarTransporte(mod, pos);
 }
+
+bool negocioTransporte::leerTransporte(int pos, transporte& leer) {
+    datosTransporte dt;
+    return dt.leerTransporte(pos, leer);
+}

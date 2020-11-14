@@ -9,7 +9,7 @@ private:
 	const char* PATH_PAQUETE = "../datos/paquete.dat";
 public:
 	bool guardarPaquete(paquete);
-	bool leerPaquete(int);
+	bool leerPaquete(int,paquete&);
 	bool modificarPaquete(paquete, int);
 	int cantRegistros();
 };

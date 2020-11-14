@@ -21,7 +21,7 @@ bool datosTransporte::guardarTransporte(transporte reg)
     return exito;
 }
 
-bool datosTransporte::leerTransporte(int pos)
+bool datosTransporte::leerTransporte(int pos,transporte& leer)
 {
     if (pos >= 0) {
         p = fopen(PATH_TRANSPORTE, "rb");

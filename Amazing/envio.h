@@ -4,9 +4,6 @@
 class envio
 {
 public:
-	envio();
-	~envio();
-
 	void setEstadoEnvio(int envio);
 	int getEstadoEnvio() { return estadoEnvio; }
 	void getFecha() { return fechaEnvio.mostrarFecha(); }
@@ -25,12 +22,3 @@ enum estadoEnvio
 	despachado = 2,
 	devuelto = 3
 };
-
-envio::envio()
-{
-}
-
-envio::~envio()
-{
-}
-

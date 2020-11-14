@@ -86,7 +86,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
@@ -100,7 +100,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
@@ -114,7 +114,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
@@ -128,7 +128,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
@@ -146,11 +146,14 @@
     <ClInclude Include="datosTransporte.h" />
     <ClInclude Include="envio.h" />
     <ClInclude Include="fecha.h" />
+    <ClInclude Include="menuPrincipal.h" />
     <ClInclude Include="negocioConductor.h" />
     <ClInclude Include="negocioTransporte.h" />
     <ClInclude Include="paquete.h" />
     <ClInclude Include="persona.h" />
+    <ClInclude Include="rlutil.h" />
     <ClInclude Include="transporte.h" />
+    <ClInclude Include="vistaTransporte.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cliente.cpp" />
@@ -160,11 +163,14 @@
     <ClCompile Include="datosTransporte.cpp" />
     <ClCompile Include="envio.cpp" />
     <ClCompile Include="fecha.cpp" />
+    <ClCompile Include="menuPrincipal.cpp" />
     <ClCompile Include="negocioConductor.cpp" />
     <ClCompile Include="negocioTransporte.cpp" />
     <ClCompile Include="paquete.cpp" />
     <ClCompile Include="persona.cpp" />
+    <ClCompile Include="Source.cpp" />
     <ClCompile Include="transporte.cpp" />
+    <ClCompile Include="vistaTransporte.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

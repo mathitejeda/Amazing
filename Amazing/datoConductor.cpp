@@ -1,5 +1,5 @@
-#include "datoConductor.h"
 #include <iostream>
+#include "datoConductor.h"
 
 bool datoConductor::guardarConductor(conductor reg)
 {
@@ -44,7 +44,7 @@ bool datoConductor::modificarConductor(conductor mod, int pos)
     if (pos >= 0)
     {
         p = fopen(PATH_CONDUCTOR, "rb+");
-        if (p = NULL)
+        if (p == NULL)
             return false;
         if (leerConductor(pos))
         {

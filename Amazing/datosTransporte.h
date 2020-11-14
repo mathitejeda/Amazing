@@ -11,7 +11,7 @@ private:
 public:
 	int cantidadRegistros();
 	bool guardarTransporte(transporte);
-	bool leerTransporte(int);
+	bool leerTransporte(int,transporte&);
 	bool modificarTransporte(transporte, int);
 
 };
