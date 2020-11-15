@@ -11,8 +11,9 @@ private:
 public:
 	int cantidadRegistros();
 	bool guardarTransporte(transporte);
-	bool leerTransporte(int,transporte&);
+	transporte leerTransporte(int);
 	bool modificarTransporte(transporte, int);
-
+	int buscarRegistro(int);
+	void cargarVector(transporte *vec);
 };
 

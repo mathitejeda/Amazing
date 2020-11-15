@@ -153,6 +153,7 @@
     <ClInclude Include="persona.h" />
     <ClInclude Include="rlutil.h" />
     <ClInclude Include="transporte.h" />
+    <ClInclude Include="vistaConductor.h" />
     <ClInclude Include="vistaTransporte.h" />
   </ItemGroup>
   <ItemGroup>
@@ -170,6 +171,7 @@
     <ClCompile Include="persona.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="transporte.cpp" />
+    <ClCompile Include="vistaConductor.cpp" />
     <ClCompile Include="vistaTransporte.cpp" />
   </ItemGroup>
   <ItemGroup>

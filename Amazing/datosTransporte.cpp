@@ -6,7 +6,7 @@ int datosTransporte::cantidadRegistros()
     p = fopen(PATH_TRANSPORTE, "rb");
     if (p == NULL) return 0;
     fseek(p, 0, SEEK_END);
-    bytes = sizeof(p);
+    bytes = ftell(p);
     tamanio = bytes / sizeof(reg);
     fclose(p);
     return tamanio;
@@ -21,17 +21,19 @@ bool datosTransporte::guardarTransporte(transporte reg)
     return exito;
 }
 
-bool datosTransporte::leerTransporte(int pos,transporte& leer)
+transporte datosTransporte::leerTransporte(int pos)
 {
     if (pos >= 0) {
         p = fopen(PATH_TRANSPORTE, "rb");
-        if (p == NULL) return false;
+        if (p == NULL) {
+            std::cout << "error en lectura";
+            return reg;
+        }
         fseek(p, pos * sizeof(reg), SEEK_SET);
         exito = fread(&reg, sizeof(reg), 1, p);
         fclose(p);
-        return exito;
+        return reg;
     }
-    else return false;
 }
 
 bool datosTransporte::modificarTransporte(transporte mod, int pos)
@@ -47,4 +49,32 @@ bool datosTransporte::modificarTransporte(transporte mod, int pos)
     else return false;
 }
 
+int datosTransporte::buscarRegistro(int id)
+{
+    p = fopen(PATH_TRANSPORTE, "rb");
+    if (p == NULL) return -1;
+    int pos = 0;
+    while (fread(&reg, sizeof(reg), 1, p)) {
+        if (reg.getID() == id && reg.getEstado()) {
+            fclose(p);
+            return pos;
+        }
+        pos++;
+    }
+    return -2;
+}
 
+void datosTransporte::cargarVector(transporte *vec) {
+    int cant = cantidadRegistros();
+    vec = (transporte*)malloc(cant * sizeof(transporte));
+    if (vec == NULL) {
+        return;
+    }
+    p = fopen(PATH_TRANSPORTE, "rb");
+    if (p == NULL) {
+        free(vec);
+        return;
+    }
+    fread(&vec[0], sizeof(transporte), cant, p);
+    fclose(p);
+}

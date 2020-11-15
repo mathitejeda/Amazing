@@ -9,9 +9,9 @@ private:
 public:
 	void menuTransporte();
 	void nuevoTransporte();
-	void modificarTransporte();
-	void bajaTransporte();
+	void modificarTransporte(int);
+	void bajaTransporte(int id);
 	void listarTransportes();
-	void mostrarTransporte(int);
+	void mostrarTransporte(transporte mostrar);
 };
 

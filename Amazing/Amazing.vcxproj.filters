@@ -13,6 +13,15 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="transporte">
+      <UniqueIdentifier>{85608a14-34d6-4abc-aafd-e043ede183c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="conductor">
+      <UniqueIdentifier>{9ce82312-b652-4344-9ee8-d57d26584400}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="paquete">
+      <UniqueIdentifier>{39d0fcd0-3ac3-43da-bce5-0c3e0605abaa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="persona.h">
@@ -21,44 +30,47 @@
     <ClInclude Include="cliente.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="transporte.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="envio.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="fecha.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="paquete.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="conductor.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="negocioConductor.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="datoConductor.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="datosTransporte.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="negocioTransporte.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="datosPaquete.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="menuPrincipal.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="vistaTransporte.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="rlutil.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="datosTransporte.h">
+      <Filter>transporte</Filter>
+    </ClInclude>
+    <ClInclude Include="negocioTransporte.h">
+      <Filter>transporte</Filter>
+    </ClInclude>
+    <ClInclude Include="transporte.h">
+      <Filter>transporte</Filter>
+    </ClInclude>
+    <ClInclude Include="vistaTransporte.h">
+      <Filter>transporte</Filter>
+    </ClInclude>
+    <ClInclude Include="datoConductor.h">
+      <Filter>conductor</Filter>
+    </ClInclude>
+    <ClInclude Include="conductor.h">
+      <Filter>conductor</Filter>
+    </ClInclude>
+    <ClInclude Include="negocioConductor.h">
+      <Filter>conductor</Filter>
+    </ClInclude>
+    <ClInclude Include="datosPaquete.h">
+      <Filter>paquete</Filter>
+    </ClInclude>
+    <ClInclude Include="paquete.h">
+      <Filter>paquete</Filter>
+    </ClInclude>
+    <ClInclude Include="vistaConductor.h">
+      <Filter>conductor</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -68,34 +80,10 @@
     <ClCompile Include="cliente.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="conductor.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="transporte.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="envio.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="fecha.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="paquete.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="datoConductor.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="negocioConductor.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="datosTransporte.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="negocioTransporte.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="datosPaquete.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Source.cpp">
@@ -104,8 +92,35 @@
     <ClCompile Include="menuPrincipal.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="negocioTransporte.cpp">
+      <Filter>transporte</Filter>
+    </ClCompile>
+    <ClCompile Include="transporte.cpp">
+      <Filter>transporte</Filter>
+    </ClCompile>
     <ClCompile Include="vistaTransporte.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>transporte</Filter>
+    </ClCompile>
+    <ClCompile Include="datosTransporte.cpp">
+      <Filter>transporte</Filter>
+    </ClCompile>
+    <ClCompile Include="conductor.cpp">
+      <Filter>conductor</Filter>
+    </ClCompile>
+    <ClCompile Include="datoConductor.cpp">
+      <Filter>conductor</Filter>
+    </ClCompile>
+    <ClCompile Include="negocioConductor.cpp">
+      <Filter>conductor</Filter>
+    </ClCompile>
+    <ClCompile Include="paquete.cpp">
+      <Filter>paquete</Filter>
+    </ClCompile>
+    <ClCompile Include="datosPaquete.cpp">
+      <Filter>paquete</Filter>
+    </ClCompile>
+    <ClCompile Include="vistaConductor.cpp">
+      <Filter>conductor</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

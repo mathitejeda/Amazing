@@ -10,6 +10,7 @@ private:
 public:
     int cantidadRegistros();
     bool guardarConductor(conductor reg);
-    bool leerConductor(int pos);
+    bool leerConductor(int pos, conductor &leer);
     bool modificarConductor(conductor mod, int pos);
+    int buscarRegistro(int ID);
 };

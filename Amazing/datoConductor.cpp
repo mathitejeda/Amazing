@@ -11,15 +11,15 @@ bool datoConductor::guardarConductor(conductor reg)
     return exito;
 }
 
-bool datoConductor::leerConductor(int pos)
+bool datoConductor::leerConductor(int pos, conductor & leer)
 {
     if (pos >= 0)
     {
         p = fopen(PATH_CONDUCTOR, "rb");
         if (p == NULL)
             return false;
-        fseek(p, pos * sizeof(reg), SEEK_SET);
-        exito = fread(&reg, sizeof(reg), 1, p);
+        fseek(p, pos * sizeof(leer), SEEK_SET);
+        exito = fread(&leer, sizeof(leer), 1, p);
         return exito;
     }
     else
@@ -28,33 +28,25 @@ bool datoConductor::leerConductor(int pos)
 
 int datoConductor::cantidadRegistros()
 {
-    int tamanio, byte;
+    int tamanio, bytes;
     p = fopen(PATH_CONDUCTOR, "rb");
     if (p == NULL)
         return false;
     fseek(p, sizeof(reg), SEEK_END);
-    byte = ftell(p);
+    bytes = ftell(p);
     fclose(p);
-    return tamanio = byte / sizeof(reg);
+    return tamanio = bytes / sizeof(reg);
 }
 
 bool datoConductor::modificarConductor(conductor mod, int pos)
 {
     bool exito;
-    if (pos >= 0)
-    {
+    if (pos > 0) {
         p = fopen(PATH_CONDUCTOR, "rb+");
-        if (p == NULL)
-            return false;
-        if (leerConductor(pos))
-        {
-            exito = fwrite(&mod, sizeof(reg), 1, p);
-        }
-        else
-            exito = false;
-        fclose(p);
+        if (p == NULL)return false;
+        fseek(p, pos * sizeof(mod), SEEK_SET);
+        exito = fwrite(&mod, sizeof(mod), 1, p);
         return exito;
     }
-    else
-        return false;
+    else return false;
 }

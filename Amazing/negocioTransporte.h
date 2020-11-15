@@ -4,9 +4,12 @@
 class negocioTransporte
 {
 public:
+	int getCant();
 	bool nuevoTransporte(transporte reg);
 	bool modificarTransporte(transporte mod,int);
-	bool leerTransporte(int pos, transporte& leer);
+	transporte leerTransporte(int pos);
+	void ordenarTransportes(transporte *vec);
+	int bucarTransporte(int ID);
 
 };
 
