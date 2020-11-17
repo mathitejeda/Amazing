@@ -136,6 +136,7 @@ void vistaTransporte::bajaTransporte(int id)
 			break;
 		}
 	}
+	cout << "No se pudo encontrar al transporte";
 
 }
 

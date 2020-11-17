@@ -9,3 +9,4 @@ void cliente::setDomicilio(char domicilio[50])
 {
 	strcpy(this->domicilio, domicilio);
 }
+ 

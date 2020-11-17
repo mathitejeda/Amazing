@@ -22,12 +22,12 @@
     <Filter Include="paquete">
       <UniqueIdentifier>{39d0fcd0-3ac3-43da-bce5-0c3e0605abaa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="cliente">
+      <UniqueIdentifier>{b959a94e-d23c-4b44-9932-e8e1d71c39f0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="persona.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="cliente.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="envio.h">
@@ -72,12 +72,21 @@
     <ClInclude Include="vistaConductor.h">
       <Filter>conductor</Filter>
     </ClInclude>
+    <ClInclude Include="cliente.h">
+      <Filter>cliente</Filter>
+    </ClInclude>
+    <ClInclude Include="vistaCliente.h">
+      <Filter>cliente</Filter>
+    </ClInclude>
+    <ClInclude Include="negocioPaquete.h">
+      <Filter>paquete</Filter>
+    </ClInclude>
+    <ClInclude Include="vistaPaquete.h">
+      <Filter>paquete</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="persona.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="cliente.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="envio.cpp">
@@ -121,6 +130,18 @@
     </ClCompile>
     <ClCompile Include="vistaConductor.cpp">
       <Filter>conductor</Filter>
+    </ClCompile>
+    <ClCompile Include="cliente.cpp">
+      <Filter>cliente</Filter>
+    </ClCompile>
+    <ClCompile Include="vistaCliente.cpp">
+      <Filter>cliente</Filter>
+    </ClCompile>
+    <ClCompile Include="negocioPaquete.cpp">
+      <Filter>paquete</Filter>
+    </ClCompile>
+    <ClCompile Include="vistaPaquete.cpp">
+      <Filter>paquete</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

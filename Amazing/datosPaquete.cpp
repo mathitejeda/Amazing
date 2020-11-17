@@ -11,13 +11,13 @@ bool datosPaquete::guardarPaquete(paquete reg)
 	return exito;
 }
 
-bool datosPaquete::leerPaquete(int pos,paquete &leer)
+bool datosPaquete::leerPaquete(paquete& leer,int pos)
 {
 	if (pos >= 0) {
 		p = fopen(PATH_PAQUETE, "rb");
 		if (p == NULL) return false;
-		fseek(p, pos * tamanio, SEEK_SET);
-		exito = fread(&leer, tamanio, 1, p);
+		fseek(p, pos * sizeof(leer), SEEK_SET);
+		exito = fread(&leer, sizeof(leer), 1, p);
 		fclose(p);
 		return exito;
 	}
@@ -29,8 +29,8 @@ bool datosPaquete::modificarPaquete(paquete mod, int pos)
 	if (pos >= 0) {
 		p = fopen(PATH_PAQUETE, "rb+");
 		if (p == NULL) return false;
-		fseek(p, pos * tamanio, SEEK_SET);
-		exito = fwrite(&mod, tamanio, 1, p);
+		fseek(p, pos * sizeof(mod), SEEK_SET);
+		exito = fwrite(&mod, sizeof(mod), 1, p);
 		fclose(p);
 		return exito;
 	}
@@ -42,7 +42,7 @@ int datosPaquete::cantRegistros()
 	p = fopen(PATH_PAQUETE, "rb");
 	if (p == NULL) return 0;
 	fseek(p, 0, SEEK_END);
-	int bytes = sizeof(p);
+	int bytes = ftell(p);
 	fclose(p);
-	return bytes / tamanio;
+	return bytes / sizeof(reg);
 }

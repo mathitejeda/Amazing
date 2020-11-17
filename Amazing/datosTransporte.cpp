@@ -1,5 +1,6 @@
 #include <iostream>
 #include "datosTransporte.h"
+
 int datosTransporte::cantidadRegistros()
 {
     int tamanio, bytes;
@@ -26,7 +27,6 @@ transporte datosTransporte::leerTransporte(int pos)
     if (pos >= 0) {
         p = fopen(PATH_TRANSPORTE, "rb");
         if (p == NULL) {
-            std::cout << "error en lectura";
             return reg;
         }
         fseek(p, pos * sizeof(reg), SEEK_SET);

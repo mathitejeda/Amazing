@@ -18,7 +18,7 @@ void vistaConductor::menuConductor()
 		cout << "3_ Baja conductor" << endl;
 		cout << "4_ Listar conductores" << endl;
 		cout << "0- Volver al menú principal" << endl;
-		cout << "Ingrese una opción";
+		cout << "Ingrese una opción: ";
 		cin >> opc;
 		cin.ignore();
 		switch (opc)
@@ -34,6 +34,14 @@ void vistaConductor::menuConductor()
 			cin >> var;
 			cin.ignore();
 			asignarVehiculo(var);
+			anykey();
+			break;
+		case 3:
+			cls();
+			cout << "Ingrese el legajo del conductor: ";
+			cin >> var;
+			cin.ignore();
+			bajaConductor(var);
 			anykey();
 			break;
 		case 0:
@@ -119,6 +127,33 @@ void vistaConductor::asignarVehiculo(int idConductor)
 
 void vistaConductor::bajaConductor(int id)
 {
+	conductor eliminar;
+	int pos;
+	char sel;
+	pos = negocioC.buscarConductor(id);
+	if (pos >= 0) {
+		cls();
+		if (negocioC.leerConductor(eliminar, pos)) {
+			mostrarConductor(eliminar);
+			cout << "Confirme que desea eliminar conductor [s/n]: ";
+			cin >> sel;
+			switch (sel)
+			{
+			case 's': case 'S':
+				eliminar.setEstado(false);
+				if (negocioC.modificarConductor(eliminar, pos)) cout << "Conductor eliminado con exito!";
+				else cout << "No se pudo eliminar.";
+				break;
+			case 'n': case 'N':
+				cout << "No se eliminara al conductor.";
+				break;
+			default:
+				cout << "Opcion incorrecta!";
+				break;
+			}
+		}
+	}
+	else cout << "No se pudo encontrar al conductor";
 }
 
 void vistaConductor::listarConductores()
