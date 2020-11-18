@@ -29,15 +29,14 @@ bool datoConductor::leerConductor(int pos, conductor & leer)
 
 int datoConductor::cantidadRegistros()
 {
-    int cant, bytes;
+    int tamanio, bytes;
     p = fopen(PATH_CONDUCTOR, "rb");
-    if (p == NULL)
-        return 0;
-    fseek(p, 0 , SEEK_END);
+    if (p == NULL) return 0;
+    fseek(p, 0, SEEK_END);
     bytes = ftell(p);
-    cant = bytes / sizeof(reg);
+    tamanio = bytes / sizeof(reg);
     fclose(p);
-    return cant;
+    return tamanio;
 }
 
 bool datoConductor::modificarConductor(conductor mod, int pos)

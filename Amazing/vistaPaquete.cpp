@@ -1,8 +1,10 @@
 #include <iostream>
+#include <iomanip>
 #include "paquete.h"
 #include "vistaPaquete.h"
 #include "negocioPaquete.h"
 #include "rlutil.h"
+
 
 using namespace std;
 using namespace rlutil;
@@ -39,6 +41,9 @@ void vistaPaquete::menuPaquete()
 			listarPaquetes();
 			anykey();
 			break;
+		case 0:
+			return;
+			break;
 		default:
 			cls();
 			cout << "opción incorrecta";
@@ -69,8 +74,63 @@ void vistaPaquete::ingresarPaquete()
 
 void vistaPaquete::estadoEnvio(int id)
 {
+	int pos = negocioP.buscarPaquete(id);
+	char sel;
+	paquete modEstado;
+	if (negocioP.leerPaquete(modEstado, pos)) {
+		cls();
+		mostrarPaquete(modEstado);
+		if (!modEstado.getEstado()) {
+			if (modEstado.getEnvio() >= 0) {
+				cout << "Desea cambiar el estado a enviado?";
+				cin >> sel;
+				switch (sel)
+				{
+				case 's': case 'S':
+					modEstado.setEstado(true);
+					if (negocioP.modificarPaquete(modEstado, pos)) cout << "Paquete modificado con exito!";
+					else cout << "No se pudo modificar el paquete";
+					break;
+				case 'n': case 'N':
+					cout << "No se modificara el paquete.";
+					break;
+				default:
+					break;
+				}
+			}
+			else cout << "No se puede modificar si no se le asigno un envio previamente";
+		}
+		else cout << "No se puede modificar porque ya ha entregado";
+	}
+	
 }
 
 void vistaPaquete::listarPaquetes()
 {
 }
+
+void vistaPaquete::mostrarPaquete(paquete mostrar)
+{
+	cout << "#ID de paquete: " << mostrar.getID() << endl;
+	cout << "* Datos Remitente: " << endl;
+	cout << left << setfill(' ') << setw(20) << mostrar.getRemitente().getNombre() << "|";
+	cout << left << setfill(' ') << setw(20) << mostrar.getRemitente().getApellido() << "|";
+	cout << left << setfill(' ') << setw(20) << mostrar.getRemitente().getDomicilio() << "|";
+	cout << left << setfill(' ') << setw(15) << mostrar.getRemitente().getDNI() << "|";
+	cout << left << setfill(' ') << setw(15) << mostrar.getRemitente().getTelefono() << "|";
+	cout << endl << "* Datos destinatario: " << endl;
+	cout << left << setfill(' ') << setw(20) << mostrar.getDestinatario().getNombre() << "|";
+	cout << left << setfill(' ') << setw(20) << mostrar.getDestinatario().getApellido() << "|";
+	cout << left << setfill(' ') << setw(20) << mostrar.getDestinatario().getDomicilio() << "|";
+	cout << left << setfill(' ') << setw(15) << mostrar.getDestinatario().getDNI() << "|";
+	cout << left << setfill(' ') << setw(15) << mostrar.getDestinatario().getTelefono() << "|";
+	cout << endl << "* Peso del paquete: " << mostrar.getPeso() << "gramos. ";
+	cout << "* Envio nro: ";
+	if (mostrar.getEnvio() < 0) cout << "N/A"<<endl;
+	else cout << mostrar.getEnvio()<<endl;
+	cout << "* Estado de envio: ";
+	if (mostrar.getEstado()) cout << "Entregado"<<endl;
+	else cout << "No entregado"<<endl;
+}
+
+

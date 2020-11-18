@@ -10,5 +10,6 @@ public:
 	void ingresarPaquete();
 	void estadoEnvio(int);
 	void listarPaquetes();
+	void mostrarPaquete(paquete);
 };
 

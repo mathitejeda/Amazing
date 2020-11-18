@@ -39,10 +39,12 @@ bool datosPaquete::modificarPaquete(paquete mod, int pos)
 
 int datosPaquete::cantRegistros()
 {
+	int tamanio, bytes;
 	p = fopen(PATH_PAQUETE, "rb");
 	if (p == NULL) return 0;
 	fseek(p, 0, SEEK_END);
-	int bytes = ftell(p);
+	bytes = ftell(p);
+	tamanio = bytes / sizeof(reg);
 	fclose(p);
-	return bytes / sizeof(reg);
+	return tamanio;
 }

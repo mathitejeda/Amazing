@@ -89,14 +89,13 @@ void vistaConductor::asignarVehiculo(int idConductor)
 		//apartado vehiculo
 		cout <<endl<< "Ingrese el id del vehiculo que desea asignar: ";
 		cin >> idVehiculo;
-		cout << idVehiculo;
 		cin.ignore();
 		transporte asignar;
 		negocioTransporte negocioT;
 		posT = negocioT.bucarTransporte(idVehiculo);
 		if ( pos >= 0) {
 			vistaTransporte mostrarT;
-			asignar = negocioT.leerTransporte(idVehiculo);
+			asignar = negocioT.leerTransporte(pos);
 			mostrarT.mostrarTransporte(asignar);
 		}
 		else {

@@ -5,7 +5,8 @@
 bool negocioPaquete::nuevoPaquete(paquete reg)
 {
 	reg.setID(dP.cantRegistros() + 1);
-	reg.setEstado(true);
+	reg.setEstado(false);
+	reg.setEnvio(-1);
 
 	return dP.guardarPaquete(reg);
 }
