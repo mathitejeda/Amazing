@@ -9,7 +9,7 @@ public:
 	int getCant();
 	bool nuevoTransporte(transporte reg);
 	bool modificarTransporte(transporte mod,int);
-	transporte leerTransporte(int pos);
+	bool leerTransporte(transporte& leer, int pos);
 	void ordenarTransportes(transporte *vec);
 	int bucarTransporte(int ID);
 

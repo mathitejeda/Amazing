@@ -60,23 +60,33 @@ void vistaEnvio::cargarEnvio()
 	cin.ignore();
 	posVehiculo = negocioT.bucarTransporte(var);
 	if (posVehiculo >= 0) {
-		vehiculo = negocioT.leerTransporte(posVehiculo);
-		posChofer = negocioC.buscarConductor(vehiculo.getID(), 2);
-		if (posChofer >= 0) {
-			if (negocioC.leerConductor(chofer, posChofer)) {
-				reg.setIDVehiculo(vehiculo.getID());
-				reg.setLegajoChofer(chofer.getLegajo());
+		if (negocioT.leerTransporte(vehiculo, posVehiculo)) {
+			posChofer = negocioC.buscarConductor(vehiculo.getID(), 2);
+			if (posChofer >= 0) {
+				if (negocioC.leerConductor(chofer, posChofer)) {
+					reg.setIDVehiculo(vehiculo.getID());
+					reg.setLegajoChofer(chofer.getLegajo());
+				}
+				else {
+					cout << "Error de lectura";
+					return;
+				}
 			}
 			else {
-				cout << "Error de lectura";
+				cout << "No se encuentra ningun chofer asignado al vechiculo";
 				return;
 			}
 		}
-		else {
-			cout << "No se encuentra ningun chofer asignado al vechiculo";
+		else
+		{
+			cout << "No se pudo leer el transporte";
 			return;
 		}
 	}
+	else{
+		cout << "No se encontro el transporte";
+	return;
+}
 
 	reg.setID(negocioE.generarID());
 

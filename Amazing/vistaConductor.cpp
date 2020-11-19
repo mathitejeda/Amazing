@@ -101,8 +101,13 @@ void vistaConductor::asignarVehiculo(int idConductor)
 		posT = negocioT.bucarTransporte(idVehiculo);
 		if ( posT >= 0) {
 			vistaTransporte mostrarT;
-			asignar = negocioT.leerTransporte(posT);
-			mostrarT.mostrarTransporte(asignar);
+			if (negocioT.leerTransporte(asignar, posT)) {
+				mostrarT.mostrarTransporte(asignar);
+			}
+			else {
+				cout << "No se pudo leer el vehiculo";
+				return;
+			}
 		}
 		else {
 			cout <<"No existe el vehiculo";

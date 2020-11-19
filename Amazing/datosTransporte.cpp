@@ -22,18 +22,17 @@ bool datosTransporte::guardarTransporte(transporte reg)
     return exito;
 }
 
-transporte datosTransporte::leerTransporte(int pos)
+bool datosTransporte::leerTransporte(transporte&leer,int pos)
 {
     if (pos >= 0) {
         p = fopen(PATH_TRANSPORTE, "rb");
-        if (p == NULL) {
-            return reg;
-        }
-        fseek(p, pos * sizeof(reg), SEEK_SET);
-        exito = fread(&reg, sizeof(reg), 1, p);
+        if (p == NULL) return false;
+        fseek(p, pos * sizeof(leer), SEEK_SET);
+        exito = fread(&leer, sizeof(leer), 1, p);
         fclose(p);
-        return reg;
+        return exito;
     }
+    return false;
 }
 
 bool datosTransporte::modificarTransporte(transporte mod, int pos)
@@ -64,17 +63,4 @@ int datosTransporte::buscarRegistro(int id)
     return -2;
 }
 
-void datosTransporte::cargarVector(transporte *vec) {
-    int cant = cantidadRegistros();
-    vec = (transporte*)malloc(cant * sizeof(transporte));
-    if (vec == NULL) {
-        return;
-    }
-    p = fopen(PATH_TRANSPORTE, "rb");
-    if (p == NULL) {
-        free(vec);
-        return;
-    }
-    fread(&vec[0], sizeof(transporte), cant, p);
-    fclose(p);
-}
+

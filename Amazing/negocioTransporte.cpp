@@ -22,30 +22,9 @@ bool negocioTransporte::modificarTransporte(transporte mod, int pos)
 }
 
 
-transporte negocioTransporte::leerTransporte(int pos) {
+bool negocioTransporte::leerTransporte(transporte &leer,int pos) {
     datosTransporte dt;
-    return dt.leerTransporte(pos);
-}
-
-void negocioTransporte::ordenarTransportes(transporte *vec)
-{
-    datosTransporte dt;
-    dt.cargarVector(vec);
-    int i, j, pos;
-    transporte aux;
-    for (i = 0;i < dt.cantidadRegistros();i++) {
-        pos = i;
-        for (j = 0;j < dt.cantidadRegistros() + 1;j++) {
-            if (vec[j].getID() > vec[i].getID()) {
-                pos = j;
-            }
-        }
-        aux = vec[i];
-        vec[i] = vec[pos];
-        vec[pos] = aux;
-    }
-
-
+    return dt.leerTransporte(leer,pos);
 }
 
 int negocioTransporte::bucarTransporte(int ID)

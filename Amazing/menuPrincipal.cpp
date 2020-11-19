@@ -9,10 +9,12 @@ using namespace std;
 void menuPrincipal::menuVisual()
 {
 	system("cls");
-	cout << "1 menu paquete   " << endl;
-	cout << "2- menu transportes " << endl;
-	cout << "3- menu conductor" << endl;
-	cout << "4- menu envio" << endl;
+	cout << "MENÚ PRINCIPAL" << endl;
+	cout << "1- Menú paquete   " << endl;
+	cout << "2- Menú transportes " << endl;
+	cout << "3- Menú conductor" << endl;
+	cout << "4- Menú envío" << endl;
+	cout << "0- Salir" << endl;
 	cout << "seleccione una opcion: ";
 	cin >> opc;
 	menuOpciones();

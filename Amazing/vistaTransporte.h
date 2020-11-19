@@ -12,6 +12,6 @@ public:
 	void modificarTransporte(int);
 	void bajaTransporte(int id);
 	void listarTransportes();
-	void mostrarTransporte(transporte mostrar);
+	void mostrarTransporte(transporte mostrar,bool masivo = false);
 };
 
