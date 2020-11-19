@@ -3,6 +3,8 @@
 
 class negocioTransporte
 {
+private:
+
 public:
 	int getCant();
 	bool nuevoTransporte(transporte reg);

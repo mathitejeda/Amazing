@@ -11,6 +11,6 @@ public:
 	void asignarVehiculo(int idConductor);
 	void bajaConductor(int id);
 	void listarConductores();
-	void mostrarConductor(conductor mostrar);
+	void mostrarConductor(conductor mostrar,bool masivo = false);
 };
 

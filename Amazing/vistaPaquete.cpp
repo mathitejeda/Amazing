@@ -16,7 +16,8 @@ void vistaPaquete::menuPaquete()
 		cout << "MENÚ PAQUETE" << endl;
 		cout << "1- Ingresar paquete" << endl;
 		cout << "2- Cambiar estado de envio de paquete" << endl;
-		cout << "3- listar paquetes" << endl;
+		cout << "3- listar paquetes no entregados" << endl;
+		cout << "4- listar paquetes entregados" << endl;
 		cout << "0- volver al menú principal" << endl;
 		cout << "Seleccione una opción: ";
 		cin >> opc;
@@ -38,7 +39,12 @@ void vistaPaquete::menuPaquete()
 			break;
 		case 3:
 			cls();
-			listarPaquetes();
+			listarPaquetes(false);
+			anykey();
+			break;
+		case 4:
+			cls();
+			listarPaquetes(true);
 			anykey();
 			break;
 		case 0:
@@ -105,8 +111,17 @@ void vistaPaquete::estadoEnvio(int id)
 	
 }
 
-void vistaPaquete::listarPaquetes()
+void vistaPaquete::listarPaquetes(bool criterio)
 {
+	paquete listar;
+	int i = 0;
+		while (negocioP.leerPaquete(listar,i++))
+		{
+			if (listar.getEstado() == criterio) {
+				mostrarPaquete(listar);
+				cout << endl;
+			}
+		}
 }
 
 void vistaPaquete::mostrarPaquete(paquete mostrar)
@@ -124,13 +139,18 @@ void vistaPaquete::mostrarPaquete(paquete mostrar)
 	cout << left << setfill(' ') << setw(20) << mostrar.getDestinatario().getDomicilio() << "|";
 	cout << left << setfill(' ') << setw(15) << mostrar.getDestinatario().getDNI() << "|";
 	cout << left << setfill(' ') << setw(15) << mostrar.getDestinatario().getTelefono() << "|";
-	cout << endl << "* Peso del paquete: " << mostrar.getPeso() << "gramos. ";
+	cout << endl << "* Peso del paquete: " << mostrar.getPeso() << "gramos. " <<endl;
 	cout << "* Envio nro: ";
 	if (mostrar.getEnvio() < 0) cout << "N/A"<<endl;
 	else cout << mostrar.getEnvio()<<endl;
-	cout << "* Estado de envio: ";
+	cout << "* Estado de envio: " ;
 	if (mostrar.getEstado()) cout << "Entregado"<<endl;
 	else cout << "No entregado"<<endl;
+	cout << "Lugar de paquete: ";
+	if (mostrar.getEstadoEnvio() == mostrar.enLocal) cout << "En local";
+	else if (mostrar.getEstadoEnvio() == mostrar.despachado) cout << "En camino";
+	else if (mostrar.getEstadoEnvio() == mostrar.devuelto) cout << "devuelto";
+	else if (mostrar.getEstadoEnvio() == mostrar.entregado) cout << "entregado";
 }
 
 

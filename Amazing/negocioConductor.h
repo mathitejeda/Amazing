@@ -10,5 +10,5 @@ public:
     bool nuevoConductor(conductor reg);
     bool modificarConductor(conductor mod, int pos);
     bool leerConductor(conductor &leer, int pos);
-    int buscarConductor(int legajo);
+    int buscarConductor(int dato,int criterio);
 };

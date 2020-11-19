@@ -6,6 +6,7 @@ bool negocioConductor::nuevoConductor(conductor reg){
     datoConductor dc;    
     reg.setLegajo(dc.cantidadRegistros()+1);
     reg.setEstado(true);
+    reg.setVehiculo(-1);
     return dc.guardarConductor(reg);
 }
 
@@ -22,15 +23,32 @@ bool negocioConductor::leerConductor(conductor &leer, int pos)
     return false;
 }
 
-int negocioConductor::buscarConductor(int legajo)
+int negocioConductor::buscarConductor(int dato,int criterio)
 {
     int i = 0;
     conductor buscar;
-    while (dc.leerConductor(i,buscar)) {
-        if (buscar.getLegajo() == legajo) {
-            if(buscar.getEstado() == true) return i;
+    switch (criterio)
+    {
+    case 1:
+        while (dc.leerConductor(i, buscar)) {
+            if (buscar.getLegajo() == dato) {
+                if (buscar.getEstado() == true) return i;
+            }
+            i++;
         }
-        i++;
+        break;
+
+    case 2:
+        while (dc.leerConductor(i, buscar)) {
+            if (buscar.getVehiculo() == dato) {
+                if (buscar.getEstado() == true) return i;
+            }
+            i++;
+        }
+        break;
+    default:
+        return -1;
+        break;
     }
     return -1;
 }

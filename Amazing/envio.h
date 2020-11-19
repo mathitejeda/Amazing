@@ -4,21 +4,16 @@
 class envio
 {
 public:
-	void setEstadoEnvio(int envio);
-	int getEstadoEnvio() { return estadoEnvio; }
+	void setID(int id);
+	void setIDVehiculo(int id);
+	void setLegajoChofer(int legajo);
+
+	int getID() { return IDEnvio; }
+	int getIDVehiculo() { return IDVehiculo; }
 	void getFecha() { return fechaEnvio.mostrarFecha(); }
 
 private:
-	int idpaquete;
-	int estadoEnvio, intentos;
+	int IDEnvio;
 	int IDVehiculo, legajoChofer;
 	fecha fechaEnvio;
-	cliente remitente, destinatario;
-};
-
-enum estadoEnvio
-{
-	enLocal = 1,
-	despachado = 2,
-	devuelto = 3
 };

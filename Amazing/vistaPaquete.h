@@ -9,7 +9,7 @@ public:
 	void menuPaquete();
 	void ingresarPaquete();
 	void estadoEnvio(int);
-	void listarPaquetes();
+	void listarPaquetes(bool criterio);
 	void mostrarPaquete(paquete);
 };
 

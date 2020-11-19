@@ -3,6 +3,7 @@
 #include "vistaTransporte.h"
 #include "vistaConductor.h"
 #include "vistaPaquete.h"
+#include "vistaEnvio.h"
 using namespace std;
 
 void menuPrincipal::menuVisual()
@@ -11,6 +12,7 @@ void menuPrincipal::menuVisual()
 	cout << "1 menu paquete   " << endl;
 	cout << "2- menu transportes " << endl;
 	cout << "3- menu conductor" << endl;
+	cout << "4- menu envio" << endl;
 	cout << "seleccione una opcion: ";
 	cin >> opc;
 	menuOpciones();
@@ -36,6 +38,12 @@ void menuPrincipal::menuOpciones()
 	{
 		vistaConductor conductor;
 		conductor.menuConductor();
+		break;
+	}
+	case 4:
+	{
+		vistaEnvio envio;
+		envio.menuEnvio();
 		break;
 	}
 	case 0:

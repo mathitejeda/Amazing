@@ -33,3 +33,13 @@ void paquete::cargarDestinatario()
 	vistaCliente cargar;
 	cargar.cargarCliente(destinatario);
 }
+
+void paquete::setIntentos(int intentos)
+{
+	this->intentos = intentos;
+}
+
+void paquete::setEstadoEnvio(int estado)
+{
+	this->estadoEnvio = estado;
+}

@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 #include "rlutil.h"
 #include "conductor.h"
 #include "vistaConductor.h"
@@ -44,6 +45,11 @@ void vistaConductor::menuConductor()
 			bajaConductor(var);
 			anykey();
 			break;
+		case 4:
+			cls();
+			listarConductores();
+			anykey();
+			break;
 		case 0:
 			return;
 			break;
@@ -82,7 +88,7 @@ void vistaConductor::asignarVehiculo(int idConductor)
 	conductor modificar;
 	int pos, posT,idVehiculo;
 	char selec;
-	pos = negocioC.buscarConductor(idConductor);
+	pos = negocioC.buscarConductor(idConductor,1);
 	if (pos >= 0) {
 		if (negocioC.leerConductor(modificar, pos));
 		mostrarConductor(modificar);
@@ -93,9 +99,9 @@ void vistaConductor::asignarVehiculo(int idConductor)
 		transporte asignar;
 		negocioTransporte negocioT;
 		posT = negocioT.bucarTransporte(idVehiculo);
-		if ( pos >= 0) {
+		if ( posT >= 0) {
 			vistaTransporte mostrarT;
-			asignar = negocioT.leerTransporte(pos);
+			asignar = negocioT.leerTransporte(posT);
 			mostrarT.mostrarTransporte(asignar);
 		}
 		else {
@@ -129,7 +135,7 @@ void vistaConductor::bajaConductor(int id)
 	conductor eliminar;
 	int pos;
 	char sel;
-	pos = negocioC.buscarConductor(id);
+	pos = negocioC.buscarConductor(id,1);
 	if (pos >= 0) {
 		cls();
 		if (negocioC.leerConductor(eliminar, pos)) {
@@ -157,12 +163,37 @@ void vistaConductor::bajaConductor(int id)
 
 void vistaConductor::listarConductores()
 {
+	conductor listado;
+	int i = 0;
+	cout << left << setfill(' ') << setw(7) << "Legajo";
+	cout << left << setfill(' ') << setw(25) << "Nombre(s)";
+	cout << left << setfill(' ') << setw(25) << "Apellido(s)";
+	cout << left << setfill(' ') << setw(15) << "DNI";
+	cout << left << setfill(' ') << setw(15) << "ID Vehiculo";
+	while (negocioC.leerConductor(listado, i++)) {
+		if (listado.getEstado()) {
+			cout << endl;
+			mostrarConductor(listado, true);
+		}
+	}
 }
 
-void vistaConductor::mostrarConductor(conductor mostrar)
+void vistaConductor::mostrarConductor(conductor mostrar, bool masivo)
 {
-	cout << "Legajo nro: " << mostrar.getLegajo() << endl;
-	cout << "Nombre(s): " << mostrar.getNombre() << endl;
-	cout << "Apellido(s): " << mostrar.getApellido() << endl;
-	cout << "DNI: " << mostrar.getDNI() << endl;
+	if (!masivo) {
+		cout << left << setfill(' ') << setw(7) << "Legajo";
+		cout << left << setfill(' ') << setw(25) << "Nombre(s)";
+		cout << left << setfill(' ') << setw(25) << "Apellido(s)";
+		cout << left << setfill(' ') << setw(15) << "DNI";
+		cout << left << setfill(' ') << setw(15) << "ID Vehiculo";
+		cout << endl;
+	}
+	cout << left << setfill(' ') << setw(7) << mostrar.getLegajo();
+	cout << left << setfill(' ') << setw(25) << mostrar.getNombre();
+	cout << left << setfill(' ') << setw(25) << mostrar.getApellido();
+	cout << left << setfill(' ') << setw(15) << mostrar.getDNI();
+	cout << left << setfill(' ') << setw(15);
+	if (mostrar.getVehiculo() >= 0) cout << mostrar.getVehiculo();
+	else cout << "N/A";
+	cout << endl;
 }

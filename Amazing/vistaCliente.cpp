@@ -24,6 +24,7 @@ void vistaCliente::cargarCliente(cliente &cargar)
 	cargar.setDNI(dni);
 	cout << "Ingrese el numero de telefono: ";
 	cin >> telefono;
+	cin.ignore();
 	cargar.setTelefono(telefono);
 }
 

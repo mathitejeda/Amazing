@@ -7,7 +7,8 @@ bool negocioPaquete::nuevoPaquete(paquete reg)
 	reg.setID(dP.cantRegistros() + 1);
 	reg.setEstado(false);
 	reg.setEnvio(-1);
-
+	reg.setIntentos(0);
+	reg.setEstadoEnvio(reg.enLocal);
 	return dP.guardarPaquete(reg);
 }
 
@@ -26,7 +27,7 @@ int negocioPaquete::buscarPaquete(int id)
 	int i = 0;
 	paquete buscar;
 	while (dP.leerPaquete(buscar, i)) {
-		if (buscar.getID() == id && buscar.getEstado() == true) {
+		if (buscar.getID() == id) {
 			return i;
 		}
 		i++;

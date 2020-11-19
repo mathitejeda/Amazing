@@ -149,6 +149,7 @@
     <ClInclude Include="fecha.h" />
     <ClInclude Include="menuPrincipal.h" />
     <ClInclude Include="negocioConductor.h" />
+    <ClInclude Include="negocioEnvio.h" />
     <ClInclude Include="negocioPaquete.h" />
     <ClInclude Include="negocioTransporte.h" />
     <ClInclude Include="paquete.h" />
@@ -157,6 +158,7 @@
     <ClInclude Include="transporte.h" />
     <ClInclude Include="vistaCliente.h" />
     <ClInclude Include="vistaConductor.h" />
+    <ClInclude Include="vistaEnvio.h" />
     <ClInclude Include="vistaPaquete.h" />
     <ClInclude Include="vistaTransporte.h" />
   </ItemGroup>
@@ -171,6 +173,7 @@
     <ClCompile Include="fecha.cpp" />
     <ClCompile Include="menuPrincipal.cpp" />
     <ClCompile Include="negocioConductor.cpp" />
+    <ClCompile Include="negocioEnvio.cpp" />
     <ClCompile Include="negocioPaquete.cpp" />
     <ClCompile Include="negocioTransporte.cpp" />
     <ClCompile Include="paquete.cpp" />
@@ -179,6 +182,7 @@
     <ClCompile Include="transporte.cpp" />
     <ClCompile Include="vistaCliente.cpp" />
     <ClCompile Include="vistaConductor.cpp" />
+    <ClCompile Include="vistaEnvio.cpp" />
     <ClCompile Include="vistaPaquete.cpp" />
     <ClCompile Include="vistaTransporte.cpp" />
   </ItemGroup>
