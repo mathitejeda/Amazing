@@ -53,7 +53,7 @@ void vistaPaquete::menuPaquete()
 		default:
 			cls();
 			cout << "opción incorrecta";
-			Sleep(3000);
+			sleep(3000);
 			break;
 		}
 	}
