@@ -10,3 +10,8 @@ bool verificador::verificarDNI(const char* DNI){
   const std::regex pattern("(\\d{2}).(\\d{3}).(\\d{3})");
   return std::regex_match(DNI,pattern);
 }
+
+bool verificador::verificarDireccion(const char* direccion){
+  const std::regex pattern("(\\w)+");
+  return std::regex_match(direccion,pattern);
+}
