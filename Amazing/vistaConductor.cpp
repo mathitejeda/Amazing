@@ -6,6 +6,7 @@
 #include "negocioTransporte.h"
 #include "transporte.h"
 #include "vistaTransporte.h"
+#include "verificador.h"
 using namespace rlutil;
 using namespace std;
 
@@ -65,15 +66,29 @@ void vistaConductor::menuConductor()
 void vistaConductor::nuevoConductor()
 {
 	conductor nuevo;
+	verificador verif;
 	char nombres[50], DNI[12];
 	cout << "Ingrese el nombre del conductor: ";
 	cin.getline(nombres, 50);
+	if (!verif.verificarNombre(nombres))
+	{
+		cout << "Nombre invalido.";
+		return nuevoConductor();
+	}
 	nuevo.setNombre(nombres);
 	cout << "Ingrese el apellido del conductor: ";
 	cin.getline(nombres, 50);
+	if (!verif.verificarNombre(nombres)) {
+		cout << "Apellido invalido.";
+		return nuevoConductor();
+	}
 	nuevo.setApellido(nombres);
 	cout << "Ingrese el DNI del conductor: ";
 	cin.getline(DNI, 12);
+	if (!verif.verificarDNI(DNI)) {
+		cout << "DNI invalido.";
+		return nuevoConductor();
+	}
 	nuevo.setDNI(DNI);
 	
 	if (negocioC.nuevoConductor(nuevo)) {

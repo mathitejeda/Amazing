@@ -96,6 +96,9 @@
     <ClInclude Include="vistaEnvio.h">
       <Filter>envio</Filter>
     </ClInclude>
+    <ClInclude Include="verificador.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="persona.cpp">
@@ -163,6 +166,9 @@
     </ClCompile>
     <ClCompile Include="vistaEnvio.cpp">
       <Filter>envio</Filter>
+    </ClCompile>
+    <ClCompile Include="verificador.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

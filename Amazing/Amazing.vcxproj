@@ -156,6 +156,7 @@
     <ClInclude Include="persona.h" />
     <ClInclude Include="rlutil.h" />
     <ClInclude Include="transporte.h" />
+    <ClInclude Include="verificador.h" />
     <ClInclude Include="vistaCliente.h" />
     <ClInclude Include="vistaConductor.h" />
     <ClInclude Include="vistaEnvio.h" />
@@ -180,6 +181,7 @@
     <ClCompile Include="persona.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="transporte.cpp" />
+    <ClCompile Include="verificador.cpp" />
     <ClCompile Include="vistaCliente.cpp" />
     <ClCompile Include="vistaConductor.cpp" />
     <ClCompile Include="vistaEnvio.cpp" />

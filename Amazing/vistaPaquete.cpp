@@ -53,7 +53,7 @@ void vistaPaquete::menuPaquete()
 		default:
 			cls();
 			cout << "opción incorrecta";
-			sleep(3000);
+			msleep(1000);
 			break;
 		}
 	}
@@ -65,11 +65,9 @@ void vistaPaquete::ingresarPaquete()
 	float peso;
 	cout << "Ingrese los datos del remitente: ";
 	ingreso.cargarRemitente();
-	cin.ignore();
 	cls();
 	cout << "Ingrese los datos del destinatario: ";
 	ingreso.cargarDestinatario();
-	cin.ignore();
 	cls();
 	cout << "Ingrese el peso del paquete: ";
 	cin >> peso;
