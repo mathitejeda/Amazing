@@ -2,11 +2,11 @@
 #include "verificador.h"
 
 bool verificador::verificarNombre(const char* nombre){
-  const std::regex pattern("((\\w)+(\\')(\\w))*(\\s)*)+");
+  const std::regex pattern("((\\D)+((\\')(\\D))*)+");
   return std::regex_match(nombre,pattern);
 }
 
 bool verificador::verificarDNI(const char* DNI){
-  const std::regex pattern("((\\d{2}).(\\d{3}).(\\d{3})");
+  const std::regex pattern("(\\d{2}).(\\d{3}).(\\d{3})");
   return std::regex_match(DNI,pattern);
 }

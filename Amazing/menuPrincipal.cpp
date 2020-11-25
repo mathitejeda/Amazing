@@ -4,11 +4,12 @@
 #include "vistaConductor.h"
 #include "vistaPaquete.h"
 #include "vistaEnvio.h"
+#include "rlutil.h"
 using namespace std;
-
+using namespace rlutil;
 void menuPrincipal::menuVisual()
 {
-	system("cls");
+	cls();
 	cout << "MENÚ PRINCIPAL" << endl;
 	cout << "1- Menú paquete   " << endl;
 	cout << "2- Menú transportes " << endl;

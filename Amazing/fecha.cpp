@@ -89,5 +89,5 @@ bool fecha::verificarFecha(int dia, int mes, int anio)
             break;
         }
     }
-    else return false;
+    return false;
 }
