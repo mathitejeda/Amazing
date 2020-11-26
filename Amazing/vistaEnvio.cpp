@@ -107,25 +107,25 @@ void vistaEnvio::cargarEnvio()
 						cout << "Paquete asignado con exito!";
 						i++;
 						if (vehiculo.getTipo() == 1 && i == 10) {
-							cout << "Se ha asignado el maximo de paquetes";
+							cout << "Se ha asignado el maximo de paquetes"<<endl;
 							var = 0;
 						}
 						else if (vehiculo.getTipo() == 2 && i == 50) {
-							cout << "Se ha asignado el maximo de paquetes";
+							cout << "Se ha asignado el maximo de paquetes"<<endl;
 							var = 0;
 						}
 						else if (vehiculo.getTipo() == 3 && i == 200) {
-							cout << "Se ha asignado el maximo de paquetes";
+							cout << "Se ha asignado el maximo de paquetes"<<endl;
 							var = 0;
 						}
 					}
-					else cout << "No se pudo asignar";
+					else cout << "No se pudo asignar"<<endl;
 				}
-				else cout << "No se pudo leer el paquete";
+				else cout << "No se pudo leer el paquete"<<endl;
 			}
-			else cout << "El paquete ya tiene un envio asignado";
+			else cout << "El paquete ya tiene un envio asignado"<<endl;
 		}
-		else cout << "No se encontro el paquete";
+		else cout << "No se encontro el paquete"<<endl;
 	}
 	if (negocioE.nuevoEnvio(reg)) {
 		cout << "Envio guardado con exito!";
