@@ -5,10 +5,13 @@
 #include "vistaPaquete.h"
 #include "vistaEnvio.h"
 #include "rlutil.h"
+#include "visuals.h"
 using namespace std;
 using namespace rlutil;
+
 void menuPrincipal::menuVisual()
 {
+	visuals::instanciaVisuals(visuals::blanco, visuals::azulClaro);
 	cls();
 	cout << "MENÚ PRINCIPAL" << endl;
 	cout << "1- Menú paquete   " << endl;
@@ -53,7 +56,7 @@ void menuPrincipal::menuOpciones()
 		isRunning = false;
 		break;
 	default:
-		cout << "nothing to see here yet";
+		visuals::instanciaVisuals()->error("Opcion incorrecta");
 		break;
 	}
 }

@@ -162,6 +162,8 @@
     <ClInclude Include="vistaEnvio.h" />
     <ClInclude Include="vistaPaquete.h" />
     <ClInclude Include="vistaTransporte.h" />
+    <ClInclude Include="vistaVerificador.h" />
+    <ClInclude Include="visuals.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cliente.cpp" />
@@ -187,6 +189,8 @@
     <ClCompile Include="vistaEnvio.cpp" />
     <ClCompile Include="vistaPaquete.cpp" />
     <ClCompile Include="vistaTransporte.cpp" />
+    <ClCompile Include="vistaVerificador.cpp" />
+    <ClCompile Include="visuals.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

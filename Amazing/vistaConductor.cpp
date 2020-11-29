@@ -7,6 +7,7 @@
 #include "transporte.h"
 #include "vistaTransporte.h"
 #include "verificador.h"
+#include "visuals.h"
 using namespace rlutil;
 using namespace std;
 
@@ -56,8 +57,7 @@ void vistaConductor::menuConductor()
 			break;
 		default:
 			cls();
-			cout << "opcion incorrecta!";
-			anykey();
+			visuals::instanciaVisuals()->error("Opcion incorrecta");
 			break;
 		}
 	}
@@ -120,12 +120,12 @@ void vistaConductor::asignarVehiculo(int idConductor)
 				mostrarT.mostrarTransporte(asignar);
 			}
 			else {
-				cout << "No se pudo leer el vehiculo";
+				visuals::instanciaVisuals()->error("No se pudo leer el vehiculo");
 				return;
 			}
 		}
 		else {
-			cout <<"No existe el vehiculo";
+			visuals::instanciaVisuals()->error("No se encontro el vehiculo");
 			return;
 		}
 		cout << "Confirme vehiculo[s/n]: ";
@@ -135,10 +135,10 @@ void vistaConductor::asignarVehiculo(int idConductor)
 		{
 		case 's': case 'S':
 		modificar.setVehiculo(var);
-		if (negocioC.modificarConductor(modificar,pos)) {
-			cout << "Asignado con exito!";
+		if (negocioC.modificarConductor(modificar, pos)) {
+			visuals::instanciaVisuals()->exito("Asignado con exito!");
 		}
-		else cout << "No se pudo asignar";
+		else visuals::instanciaVisuals()->error("No se pudo asignar");
 		break;
 		case 'n': case 'N':
 			cout << "No se asignara el vehiculo";
