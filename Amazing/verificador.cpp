@@ -7,7 +7,7 @@ bool verificador::verificarNombre(const char* nombre){
 }
 
 bool verificador::verificarDNI(const char* DNI){
-  const std::regex pattern("(\\d{1-2}).(\\d{3}).(\\d{3})");
+  const std::regex pattern("(\\d{1,2}).(\\d{3}).(\\d{3})");
   return std::regex_match(DNI,pattern);
 }
 
